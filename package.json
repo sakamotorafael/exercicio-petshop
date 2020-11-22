@@ -7,5 +7,16 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sakamotorafael/exercicio-petshop.git"
+  },
+  "bugs": {
+    "url": "https://github.com/sakamotorafael/exercicio-petshop/issues"
+  },
+  "homepage": "https://github.com/sakamotorafael/exercicio-petshop#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
 }
