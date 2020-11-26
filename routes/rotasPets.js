@@ -1,18 +1,10 @@
 const express = require("express")
 const router = express.Router()
-const funcoes = require("../funcoes")
+const petsController = require("../controller/petsController")
 
-router.get("/", (req, res)=>{
-    res.send("Home Page")
-})
-
-router.get("/pets/all", (req, res)=>{
-    res.send(funcoes.listarPets())
-})
-
-router.get("/pets/:id", (req, res)=>{
-    let idPet = req.params.id
-    res.send(funcoes.retornaPet(idPet))
-})
+router.get("/", petsController.home)
+router.get("/pets/all", petsController.listar)
+router.get("/pets/:id", petsController.petID)
+router.get("/pets", petsController.petNome)
 
 module.exports = router

@@ -6,7 +6,14 @@ const rotasPets = require("./routes/rotasPets")
 const app = express()
 app.listen(3030, ()=>console.log("Servidor rodando."))
 
-app.post("/pets/:id/castrar")
+app.use(rotasPets)
+
+
+
+
+
+
+
 /*
 let petNovo = {
     nome: "Robson",
