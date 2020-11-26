@@ -1,6 +1,6 @@
 //funções
 
-const pets = require('../pets')
+const pets = require('../models/pets')
 
 function vacinarPet(petID, vacina) {
     let vacinou = false
@@ -16,7 +16,7 @@ function vacinarPet(petID, vacina) {
       console.log("Vacinação:\nNão encontramos o cadastro do seu pet.")
     } 
 }
-  
+
 function castrarPet(petID) {
     let castrou = false
     pets.forEach(function(cadastro, index){
@@ -75,18 +75,7 @@ function retornaPet(id){
   let match = pets.find((pet) => pet.ID == id)
 
   if (match != undefined) {
-    //let stringVacina = pets[id]
-    let stringPet = "nome: " + match.nome + "<br>" +
-      "raça: " + match.raca + "<br>" +
-      "peso: " + match.peso + "<br>" +
-      "idade: " + match.idade + "<br>" +
-      "cor: " + match.cor + "<br>" +
-      "porte: " + match.porte + "<br>" +
-      "sexo: " + match.sexo + "<br>" +
-      "dono: " + match.dono + "<br>" +
-      "castrado: " + match.castrado  
-    
-    return stringPet
+    return match
   } else {
     return "Pet não encontrado."
   }
@@ -101,3 +90,16 @@ module.exports = {
     buscarPet,
     retornaPet
 }
+
+function listaPets(pets) {
+  
+  let lista = []
+  pets.forEach( (pet) => {
+    
+    lista.push([pet.nome, pet.raca, pet.dono])
+      
+    })
+    return lista
+  }
+
+console.log(listaPets(pets))

@@ -1,23 +1,10 @@
 //const http = require("http")
 //const url = require("url")
 const express = require("express")
-const funcoes = require("./funcoes")
+const rotasPets = require("./routes/rotasPets")
 
 const app = express()
 app.listen(3030, ()=>console.log("Servidor rodando."))
-
-app.get("/pets/all", (req, res)=>{
-    res.send(funcoes.listarPets())
-})
-    
-app.get("/", (req, res)=>{
-    res.send("Home Page")
-})
-
-app.get("/pets/:id", (req, res)=>{
-    let idPet = req.params.id
-    res.send(funcoes.retornaPet(idPet))
-})
 
 app.post("/pets/:id/castrar")
 /*
